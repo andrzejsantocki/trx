@@ -1,0 +1,6 @@
+# never commit config or keys
+env
+*.env
+.env*
+__pycache__/
+*.pyc

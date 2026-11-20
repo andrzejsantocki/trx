@@ -1,0 +1,370 @@
+#!/usr/bin/env python3
+"""trx — English word/phrase translator for the terminal, powered by any
+OpenAI-compatible LLM endpoint and grounded by a free dictionary.
+
+Usage:
+  tr <word or phrase>      translate (e.g. tr get over that)
+  tr -l German lore        other target language for one call
+  tr --json lore           raw JSON output
+  tr                       open the menu (also: tr -m / tr --menu)
+  tr --test                check endpoint, key and model
+  tr --themes              preview color themes
+  tr --theme nord          save theme as default
+  tr --theme nord lore     use a theme for one call only
+  tr -h                    this help
+
+Menu: set API key (hidden input), base URL, model, language, fallback URL; test; translate.
+Dictionary: definitions/IPA grounded via dictionaryapi.dev when the word exists
+(phrases usually fall back to LLM only). Disable with TR_NO_DICT=1.
+Config: ~/.config/tr/env (mode 0600). Its values override TR_* shell variables;
+values may reference env vars, e.g. TR_API_KEY=${MY_LLM_KEY}.
+"""
+import json, os, re, sys, urllib.error, urllib.parse, urllib.request
+
+__version__ = "1.0.0"
+
+CFG = os.path.expanduser("~/.config/tr/env")
+PROMPT = """You are an expert English→{lang} translator and lexicographer.
+Input: "{text}" ({kind}).
+Return ONLY JSON with this shape:
+{{
+ "input": str, "kind": "word"|"phrase", "ipa": str|null, "part_of_speech": [str],
+ "meaning": [{{"sense": str, "explanation": str, "example_en": str, "example_tr": str}}],
+ "translations": [{{"text": str, "usage_pct": int, "note": str}}],
+ "slang": [{{"en": str, "meaning": str, "tr": str, "register": str}}],
+ "context": [{{"situation": str, "tr": str, "note": str}}]
+}}
+Rules: "meaning" = semantic explanation of each sense in English (most common first).
+"translations" = {lang} equivalents sorted by estimated share of real-world usage; usage_pct values sum to 100; they are estimates.
+"slang" = informal/slang uses of the input or close slang synonyms with {lang} equivalents; empty list if none.
+"context" = for phrases/idioms give context-dependent translations (literal vs idiomatic, tone); for single words give 2-3 common collocations. Never invent meanings; if the input is not English or is unknown, say so in meaning."""
+
+
+FIELDS = [("TR_API_KEY", "API key", True), ("TR_BASE_URL", "Base URL", False),
+          ("TR_MODEL", "Model", False), ("TR_LANG", "Target language", False),
+          ("TR_FALLBACK_URL", "Fallback URL", False), ("TR_THEME", "Color theme", False)]
+
+
+def read_cfg():
+    cfg = {}
+    if os.path.exists(CFG):
+        for line in open(CFG):
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                k, v = line.split("=", 1)
+                v = os.path.expandvars(v.strip().strip("'\""))
+                cfg[k.strip()] = "" if "${" in v else v  # unresolved ${VAR} = unset
+    return cfg
+
+
+def load_cfg():
+    # Config file wins over stale shell vars (stale TR_API_KEY caused 401s).
+    os.environ.update(read_cfg())
+
+
+def save_cfg(cfg):
+    os.makedirs(os.path.dirname(CFG), exist_ok=True)
+    tmp = CFG + ".tmp"
+    fd = os.open(tmp, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+    with os.fdopen(fd, "w") as f:
+        f.writelines(f"{k}={v}\n" for k, v in cfg.items() if v)
+    os.chmod(tmp, 0o600)
+    os.replace(tmp, CFG)  # atomic: never leaves a half-written key file
+
+
+def mask(v):
+    return "(unset)" if not v else ("*" * 4 + v[-4:] if len(v) > 8 else "****")
+
+
+def test_conn():
+    load_cfg()
+    base, key = os.environ.get("TR_BASE_URL", ""), os.environ.get("TR_API_KEY", "")
+    if not base or not key:
+        return print("  missing Base URL or API key")
+    try:
+        req = urllib.request.Request(base.rstrip("/") + "/models",
+                                     headers={"Authorization": f"Bearer {key}", "User-Agent": f"trx/{__version__}"})
+        with urllib.request.urlopen(req, timeout=15) as r:
+            ids = [m.get("id") for m in json.load(r).get("data", [])]
+        model = os.environ.get("TR_MODEL", "")
+        print(f"  OK — {len(ids)} models; '{model}' " + ("available" if model in ids else "NOT listed"))
+    except Exception as e:
+        print(f"  FAILED — {e}")
+
+
+def menu():
+    import getpass
+    while True:
+        cfg = read_cfg()
+        print("\n\033[1;38;2;%d;%d;%dmtr menu\033[0m" % theme()["a2"])
+        for i, (k, label, secret) in enumerate(FIELDS, 1):
+            v = cfg.get(k, "")
+            print(f"  {i}) Set {label:<16} [{mask(v) if secret else (v or '(unset)')}]")
+        print("  t) Test connection\n  r) Translate\n  h) Help\n  q) Quit")
+        try:
+            ch = input("> ").strip().lower()
+        except (EOFError, KeyboardInterrupt):
+            print(); return 0
+        if ch in ("q", ""): return 0
+        if ch == "h": print(__doc__)
+        elif ch == "t": test_conn()
+        elif ch == "r":
+            text = input("word/phrase: ").strip()
+            if text: main(["--", *text.split()])
+        elif ch.isdigit() and 1 <= int(ch) <= len(FIELDS):
+            k, label, secret = FIELDS[int(ch) - 1]
+            if k == "TR_THEME":
+                names = list(THEMES); preview_themes()
+                for i, n in enumerate(names, 1): print(f"  {i:>2}) {n}")
+                v = input("theme number (empty = keep): ").strip()
+                if v.isdigit() and 1 <= int(v) <= len(names):
+                    cfg[k] = names[int(v) - 1]; save_cfg(cfg); print(f"  saved theme {cfg[k]}")
+                elif v: print("  unknown choice")
+                continue
+            try:
+                v = (getpass.getpass if secret else input)(f"{label} (empty = keep, '-' = clear): ").strip()
+            except (EOFError, KeyboardInterrupt):
+                print(); continue
+            if not v: continue
+            cfg[k] = "" if v == "-" else v
+            save_cfg(cfg); print(f"  saved {label}")
+        else:
+            print("  unknown choice")
+
+
+def ask(base, key, model, prompt):
+    req = urllib.request.Request(
+        base.rstrip("/") + "/chat/completions",
+        data=json.dumps({"model": model, "temperature": 0.2, "stream": False,
+                         "response_format": {"type": "json_object"},
+                         "messages": [{"role": "user", "content": prompt}]}).encode(),
+        headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json",
+                 "User-Agent": f"trx/{__version__}"})
+    with urllib.request.urlopen(req, timeout=int(os.environ.get("TR_TIMEOUT", 90))) as r:
+        content = json.load(r)["choices"][0]["message"]["content"]
+    s = content[content.find("{"):content.rfind("}") + 1]  # tolerate ```json fences
+    return json.loads(s)
+
+
+def lookup(text):
+    """Dictionary entry from dictionaryapi.dev (Wiktionary data). None on miss/error."""
+    url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + urllib.parse.quote(text.lower())
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": f"trx/{__version__}"}), timeout=8) as r:
+            e = json.load(r)[0]
+    except Exception:
+        return None  # 404 for most phrases, or offline: LLM-only
+    ipa = e.get("phonetic") or next((p["text"] for p in e.get("phonetics", []) if p.get("text")), None)
+    senses = [f"({m['partOfSpeech']}) {d['definition']}"
+              for m in e.get("meanings", []) for d in m.get("definitions", [])[:4]]
+    return {"ipa": ipa, "senses": senses[:12],
+            "pos": list(dict.fromkeys(m["partOfSpeech"] for m in e.get("meanings", [])))}
+
+
+# Roles: a1/a2 = gradient ends, blue = English example, ok = dictionary badge,
+# hl = percentages/stars, mute = notes, text = body. Hex from each theme's official palette.
+THEMES = {
+    "default":          dict(a1="#b48cff", a2="#5eeaff", blue="#6ea0ff", ok="#78e6a0", hl="#ffcd6e", mute="#7d829b", text="#e1e4f0"),
+    "dracula":          dict(a1="#bd93f9", a2="#8be9fd", blue="#6272a4", ok="#50fa7b", hl="#f1fa8c", mute="#6272a4", text="#f8f8f2"),
+    "catppuccin-mocha": dict(a1="#cba6f7", a2="#89dceb", blue="#89b4fa", ok="#a6e3a1", hl="#f9e2af", mute="#7f849c", text="#cdd6f4"),
+    "tokyo-night":      dict(a1="#bb9af7", a2="#7dcfff", blue="#7aa2f7", ok="#9ece6a", hl="#e0af68", mute="#565f89", text="#c0caf5"),
+    "nord":             dict(a1="#b48ead", a2="#88c0d0", blue="#81a1c1", ok="#a3be8c", hl="#ebcb8b", mute="#616e88", text="#eceff4"),
+    "gruvbox":          dict(a1="#d3869b", a2="#8ec07c", blue="#83a598", ok="#b8bb26", hl="#fabd2f", mute="#928374", text="#ebdbb2"),
+    "solarized-dark":   dict(a1="#6c71c4", a2="#2aa198", blue="#268bd2", ok="#859900", hl="#b58900", mute="#586e75", text="#93a1a1"),
+    "one-dark":         dict(a1="#c678dd", a2="#56b6c2", blue="#61afef", ok="#98c379", hl="#e5c07b", mute="#5c6370", text="#abb2bf"),
+    "rose-pine":        dict(a1="#c4a7e7", a2="#9ccfd8", blue="#31748f", ok="#9ccfd8", hl="#f6c177", mute="#6e6a86", text="#e0def4"),
+    "monokai":          dict(a1="#ae81ff", a2="#66d9ef", blue="#66d9ef", ok="#a6e22e", hl="#e6db74", mute="#75715e", text="#f8f8f2"),
+}
+
+
+def theme(name=None):
+    t = THEMES.get(name or os.environ.get("TR_THEME", "default"), THEMES["default"])
+    return {k: tuple(int(v[i:i + 2], 16) for i in (1, 3, 5)) for k, v in t.items()}
+
+
+def preview_themes():
+    for name in THEMES:
+        t = theme(name); n = 24
+        bar = "".join("\033[38;2;%d;%d;%dm█" % tuple(int(t["a1"][j] + (t["a2"][j] - t["a1"][j]) * k / (n - 1)) for j in range(3)) for k in range(n))
+        dots = " ".join("\033[38;2;%d;%d;%dm●" % t[r] for r in ("blue", "ok", "hl", "mute", "text"))
+        print(f"  {name:<17} {bar}\033[0m  {dots}\033[0m")
+
+
+def render(d, lang):
+    import shutil, textwrap, unicodedata
+    tty = sys.stdout.isatty() and not os.environ.get("NO_COLOR")
+    W = max(50, min(shutil.get_terminal_size((90, 20)).columns, 100))
+
+    def c(rgb, t, bold=False, dim=False, italic=False):
+        if not tty: return str(t)
+        sgr = ["1"] * bold + ["2"] * dim + ["3"] * italic + ["38;2;%d;%d;%d" % rgb]
+        return f"\033[{';'.join(sgr)}m{t}\033[0m"
+
+    def vlen(t):  # visible width: strip ANSI, count wide chars as 2
+        t = re.sub(r"\033\[[0-9;]*m", "", t)
+        return sum(2 if unicodedata.east_asian_width(ch) in "WF" else 1 for ch in t)
+
+    T = theme()
+    CYAN, PURP, BLUE, GREEN, GOLD, MUTE, TEXT = (T[k] for k in ("a2", "a1", "blue", "ok", "hl", "mute", "text"))
+
+    def grad(t, a=PURP, z=CYAN, bold=True):
+        if not tty: return t
+        n = max(len(t) - 1, 1)
+        return "".join(c(tuple(int(a[k] + (z[k] - a[k]) * i / n) for k in range(3)), ch, bold=bold)
+                       for i, ch in enumerate(t))
+
+    def wrap(t, ind, first=""):
+        lines = textwrap.wrap(t, W - ind - 2) or [""]
+        return [(first if i == 0 else " " * ind) + l for i, l in enumerate(lines)]
+
+    def section(icon, title):
+        line = f"{icon} {title} "
+        print()
+        print(grad(line) + c(MUTE, "─" * max(W - vlen(line) - 1, 4), dim=True))
+
+    # ── header card ──
+    title = d.get("input", "")
+    sub = "  ".join(x for x in (d.get("ipa") or "", ", ".join(d.get("part_of_speech") or [])) if x)
+    src = ("✓ dictionary + LLM" if d.get("_dict") else "◇ LLM only")
+    inner = W - 4
+    top = c(PURP, "╭" + "─" * (W - 2) + "╮")
+    bot = c(CYAN, "╰" + "─" * (W - 2) + "╯")
+    def row(txt):
+        pad = inner - vlen(txt)
+        return c(PURP, "│") + " " + txt + " " * max(pad, 0) + " " + c(CYAN, "│")
+    print(top)
+    right = c(GREEN if d.get("_dict") else GOLD, src, dim=not d.get("_dict"))
+    gap = inner - vlen(title) - vlen(src)
+    print(row(grad(title.upper() if len(title) < 3 else title) + " " * max(gap, 1) + right))
+    if sub: print(row(c(MUTE, sub, italic=True)))
+    print(row(c(MUTE, f"English → {lang}", dim=True)))
+    print(bot)
+
+    # ── meaning ──
+    section("◆", "Meaning")
+    for i, m in enumerate(d.get("meaning") or [], 1):
+        num = c(PURP, f" {i:>2} ", bold=True)
+        for l in wrap(m.get("sense", ""), 5, ""):
+            print(num + c(TEXT, l, bold=True)); num = "    "
+        for l in wrap(m.get("explanation", ""), 5):
+            print("     " + c(MUTE, l.strip()))
+        if m.get("example_en"):
+            for l in wrap(f"“{m['example_en']}”", 7):
+                print("     " + c(BLUE, "▎", bold=True) + " " + c(TEXT, l.strip(), italic=True))
+            for l in wrap(m.get("example_tr", ""), 7):
+                print("     " + c(CYAN, "▎", bold=True) + " " + c(CYAN, l.strip()))
+
+    # ── translations ──
+    section("◆", f"Translations · {lang} · est. share of usage")
+    tr = d.get("translations") or []
+    tw = max([vlen(t.get("text", "")) for t in tr] + [6])
+    for t in tr:
+        p = max(0, min(100, int(t.get("usage_pct") or 0)))
+        cells = 18; full = p * cells / 100
+        bar = ""
+        for k in range(cells):
+            ch = "█" if k + 1 <= full else ("▌" if k < full else "·")
+            col = tuple(int(PURP[j] + (CYAN[j] - PURP[j]) * k / (cells - 1)) for j in range(3))
+            bar += c(col if ch != "·" else MUTE, ch, dim=ch == "·")
+        word = t.get("text", "")
+        print(f"  {c(GOLD, f'{p:>3}%', bold=True)} {bar}  {c(TEXT, word, bold=True)}" + " " * (tw - vlen(word)))
+        if t.get("note"):
+            for l in wrap(t["note"], 30):
+                print(" " * 30 + c(MUTE, l.strip(), italic=True))
+
+    # ── slang ──
+    section("◆", "Slang")
+    sl = d.get("slang") or []
+    if not sl: print("  " + c(MUTE, "none known", italic=True))
+    for s in sl:
+        reg = c(PURP, f"[{s.get('register', '')}]", dim=True) if s.get("register") else ""
+        print(f"  {c(GOLD, '✦')} {c(TEXT, s.get('en', ''), bold=True)} {reg}")
+        for l in wrap(s.get("meaning", ""), 6):
+            print("    " + c(MUTE, l.strip()))
+        if s.get("tr"): print("    " + c(CYAN, "→ " + s["tr"]))
+
+    # ── context ──
+    section("◆", "In context")
+    for x in d.get("context") or []:
+        print(f"  {c(BLUE, '›', bold=True)} {c(TEXT, x.get('situation', ''))}")
+        print("    " + c(CYAN, "→ " + x.get("tr", ""), bold=True))
+        if x.get("note"):
+            for l in wrap(x["note"], 6):
+                print("    " + c(MUTE, l.strip(), italic=True))
+    print()
+
+
+class Spinner:
+    """Braille spinner on stderr while waiting for the LLM; no-op when not a TTY."""
+    def __init__(self, msg): self.msg, self.on = msg, sys.stderr.isatty()
+    def __enter__(self):
+        if self.on:
+            import itertools, threading
+            self.stop = threading.Event()
+            def spin():
+                for f in itertools.cycle("⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏"):
+                    if self.stop.wait(0.08): break
+                    sys.stderr.write(f"\r\033[38;2;%d;%d;%dm{f}\033[0m \033[2m{self.msg}\033[0m" % theme()["a2"]); sys.stderr.flush()
+            self.t = threading.Thread(target=spin, daemon=True); self.t.start()
+        return self
+    def __exit__(self, *a):
+        if self.on:
+            self.stop.set(); self.t.join(); sys.stderr.write("\r\033[K"); sys.stderr.flush()
+
+
+def main(argv):
+    load_cfg()
+    if not argv or argv[0] in ("-m", "--menu"):
+        return menu() if sys.stdin.isatty() else (print(__doc__) or 2)
+    lang, raw, set_theme_only = os.environ.get("TR_LANG", "Polish"), False, False
+    while argv and argv[0].startswith("-"):
+        a = argv.pop(0)
+        if a == "--": break
+        if len(a) > 2 and a[1] != "-": a = "-" + a  # accept -theme as --theme
+        if a in ("-h", "--help"): print(__doc__); return 0
+        elif a in ("-V", "--version"): print(f"trx {__version__}"); return 0
+        elif a == "--test": test_conn(); return 0
+        elif a == "--themes": preview_themes(); return 0
+        elif a == "--theme" and argv:
+            name = argv.pop(0)
+            if name not in THEMES:
+                print(f"trx: unknown theme {name}; options: {', '.join(THEMES)}", file=sys.stderr); return 2
+            os.environ["TR_THEME"] = name; set_theme_only = True
+        elif a in ("-l", "--lang") and argv: lang = argv.pop(0)
+        elif a == "--json": raw = True
+        else: print(f"trx: unknown option {a}", file=sys.stderr); return 2
+    text = " ".join(argv).strip()
+    if not text and os.environ.get("TR_THEME") and set_theme_only:
+        cfg = read_cfg(); cfg["TR_THEME"] = os.environ["TR_THEME"]; save_cfg(cfg)
+        print(f"theme saved: {cfg['TR_THEME']}"); return 0
+    if not text or len(text) > 500:
+        print("usage: tr [-l LANG] [--theme NAME] [--json] <english word or phrase>  (max 500 chars)\n       tr --theme NAME   save theme · tr --themes   preview · tr   menu · tr -h   help", file=sys.stderr); return 2
+    key, model = os.environ.get("TR_API_KEY", ""), os.environ.get("TR_MODEL", "")
+    bases = [b for b in (os.environ.get("TR_BASE_URL"), os.environ.get("TR_FALLBACK_URL")) if b]
+    if not bases or not key or not model:
+        print("trx: set Base URL, API key and Model — run `trx` (no args) to open the menu", file=sys.stderr); return 1
+    prompt = PROMPT.format(lang=lang, text=text.replace('"', "'"), kind="phrase" if " " in text else "word")
+    ent = None if os.environ.get("TR_NO_DICT") else lookup(text)
+    if ent:
+        prompt += ("\n\nDictionary entry (authoritative; base \"meaning\" on these senses, do not contradict them):\n"
+                   + "\n".join(f"- {s}" for s in ent["senses"]))
+    err = None
+    for base in bases:
+        try:
+            with Spinner(f"translating with {model}…"):
+                d = ask(base, key, model, prompt)
+            break
+        except (urllib.error.URLError, TimeoutError, OSError, ValueError, KeyError) as e:
+            err = f"{base}: {e}"
+    else:
+        print(f"trx: request failed — {err}", file=sys.stderr); return 1
+    if ent:  # dictionary wins for verifiable fields
+        d["_dict"] = True
+        if ent["ipa"]: d["ipa"] = ent["ipa"]
+        if ent["pos"]: d["part_of_speech"] = ent["pos"]
+    print(json.dumps(d, ensure_ascii=False, indent=1)) if raw else render(d, lang)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))
