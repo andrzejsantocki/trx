@@ -1,0 +1,384 @@
+<svg class="rich-terminal" viewBox="0 0 1068 1587.1999999999998" xmlns="http://www.w3.org/2000/svg">
+    <!-- Generated with Rich https://www.textualize.io -->
+    <style>
+
+    @font-face {
+        font-family: "Fira Code";
+        src: local("FiraCode-Regular"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Regular.woff2") format("woff2"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Regular.woff") format("woff");
+        font-style: normal;
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: "Fira Code";
+        src: local("FiraCode-Bold"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Bold.woff2") format("woff2"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Bold.woff") format("woff");
+        font-style: bold;
+        font-weight: 700;
+    }
+
+    .terminal-3059034938-matrix {
+        font-family: Fira Code, monospace;
+        font-size: 20px;
+        line-height: 24.4px;
+        font-variant-east-asian: full-width;
+    }
+
+    .terminal-3059034938-title {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: arial;
+    }
+
+    .terminal-3059034938-r1 { fill: #b48cff }
+.terminal-3059034938-r2 { fill: #e1e4f0 }
+.terminal-3059034938-r3 { fill: #b48cff;font-weight: bold }
+.terminal-3059034938-r4 { fill: #97abff;font-weight: bold }
+.terminal-3059034938-r5 { fill: #7acaff;font-weight: bold }
+.terminal-3059034938-r6 { fill: #5eeaff;font-weight: bold }
+.terminal-3059034938-r7 { fill: #78e6a0 }
+.terminal-3059034938-r8 { fill: #5eeaff }
+.terminal-3059034938-r9 { fill: #7d829b;font-style: italic; }
+.terminal-3059034938-r10 { fill: #53566a }
+.terminal-3059034938-r11 { fill: #aa96ff;font-weight: bold }
+.terminal-3059034938-r12 { fill: #a0a0ff;font-weight: bold }
+.terminal-3059034938-r13 { fill: #8db5ff;font-weight: bold }
+.terminal-3059034938-r14 { fill: #84c0ff;font-weight: bold }
+.terminal-3059034938-r15 { fill: #71d5ff;font-weight: bold }
+.terminal-3059034938-r16 { fill: #67dfff;font-weight: bold }
+.terminal-3059034938-r17 { fill: #e1e4f0;font-weight: bold }
+.terminal-3059034938-r18 { fill: #7d829b }
+.terminal-3059034938-r19 { fill: #6ea0ff;font-weight: bold }
+.terminal-3059034938-r20 { fill: #e1e4f0;font-style: italic; }
+.terminal-3059034938-r21 { fill: #b28eff;font-weight: bold }
+.terminal-3059034938-r22 { fill: #b090ff;font-weight: bold }
+.terminal-3059034938-r23 { fill: #ae92ff;font-weight: bold }
+.terminal-3059034938-r24 { fill: #ac94ff;font-weight: bold }
+.terminal-3059034938-r25 { fill: #a898ff;font-weight: bold }
+.terminal-3059034938-r26 { fill: #a69aff;font-weight: bold }
+.terminal-3059034938-r27 { fill: #a49cff;font-weight: bold }
+.terminal-3059034938-r28 { fill: #a29eff;font-weight: bold }
+.terminal-3059034938-r29 { fill: #9ea2ff;font-weight: bold }
+.terminal-3059034938-r30 { fill: #9da5ff;font-weight: bold }
+.terminal-3059034938-r31 { fill: #9ba7ff;font-weight: bold }
+.terminal-3059034938-r32 { fill: #99a9ff;font-weight: bold }
+.terminal-3059034938-r33 { fill: #95adff;font-weight: bold }
+.terminal-3059034938-r34 { fill: #93afff;font-weight: bold }
+.terminal-3059034938-r35 { fill: #91b1ff;font-weight: bold }
+.terminal-3059034938-r36 { fill: #8fb3ff;font-weight: bold }
+.terminal-3059034938-r37 { fill: #8bb7ff;font-weight: bold }
+.terminal-3059034938-r38 { fill: #89b9ff;font-weight: bold }
+.terminal-3059034938-r39 { fill: #88bcff;font-weight: bold }
+.terminal-3059034938-r40 { fill: #86beff;font-weight: bold }
+.terminal-3059034938-r41 { fill: #82c2ff;font-weight: bold }
+.terminal-3059034938-r42 { fill: #80c4ff;font-weight: bold }
+.terminal-3059034938-r43 { fill: #7ec6ff;font-weight: bold }
+.terminal-3059034938-r44 { fill: #7cc8ff;font-weight: bold }
+.terminal-3059034938-r45 { fill: #78ccff;font-weight: bold }
+.terminal-3059034938-r46 { fill: #76ceff;font-weight: bold }
+.terminal-3059034938-r47 { fill: #74d0ff;font-weight: bold }
+.terminal-3059034938-r48 { fill: #73d3ff;font-weight: bold }
+.terminal-3059034938-r49 { fill: #6fd7ff;font-weight: bold }
+.terminal-3059034938-r50 { fill: #6dd9ff;font-weight: bold }
+.terminal-3059034938-r51 { fill: #6bdbff;font-weight: bold }
+.terminal-3059034938-r52 { fill: #69ddff;font-weight: bold }
+.terminal-3059034938-r53 { fill: #65e1ff;font-weight: bold }
+.terminal-3059034938-r54 { fill: #63e3ff;font-weight: bold }
+.terminal-3059034938-r55 { fill: #61e5ff;font-weight: bold }
+.terminal-3059034938-r56 { fill: #5fe7ff;font-weight: bold }
+.terminal-3059034938-r57 { fill: #ffcd6e;font-weight: bold }
+.terminal-3059034938-r58 { fill: #ae91ff }
+.terminal-3059034938-r59 { fill: #a997ff }
+.terminal-3059034938-r60 { fill: #a49cff }
+.terminal-3059034938-r61 { fill: #9fa2ff }
+.terminal-3059034938-r62 { fill: #9aa7ff }
+.terminal-3059034938-r63 { fill: #a799ff;font-weight: bold }
+.terminal-3059034938-r64 { fill: #9ba6ff;font-weight: bold }
+.terminal-3059034938-r65 { fill: #8fb4ff;font-weight: bold }
+.terminal-3059034938-r66 { fill: #82c1ff;font-weight: bold }
+.terminal-3059034938-r67 { fill: #76cfff;font-weight: bold }
+.terminal-3059034938-r68 { fill: #6adcff;font-weight: bold }
+.terminal-3059034938-r69 { fill: #ffcd6e }
+.terminal-3059034938-r70 { fill: #745ca6 }
+.terminal-3059034938-r71 { fill: #ac93ff;font-weight: bold }
+.terminal-3059034938-r72 { fill: #a59bff;font-weight: bold }
+.terminal-3059034938-r73 { fill: #9ea3ff;font-weight: bold }
+.terminal-3059034938-r74 { fill: #90b3ff;font-weight: bold }
+.terminal-3059034938-r75 { fill: #89bbff;font-weight: bold }
+.terminal-3059034938-r76 { fill: #81c2ff;font-weight: bold }
+.terminal-3059034938-r77 { fill: #73d2ff;font-weight: bold }
+.terminal-3059034938-r78 { fill: #6cdaff;font-weight: bold }
+.terminal-3059034938-r79 { fill: #65e2ff;font-weight: bold }
+    </style>
+
+    <defs>
+    <clipPath id="terminal-3059034938-clip-terminal">
+      <rect x="0" y="0" width="1048.2" height="1536.1999999999998" />
+    </clipPath>
+    <clipPath id="terminal-3059034938-line-0">
+    <rect x="0" y="1.5" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-1">
+    <rect x="0" y="25.9" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-2">
+    <rect x="0" y="50.3" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-3">
+    <rect x="0" y="74.7" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-4">
+    <rect x="0" y="99.1" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-5">
+    <rect x="0" y="123.5" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-6">
+    <rect x="0" y="147.9" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-7">
+    <rect x="0" y="172.3" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-8">
+    <rect x="0" y="196.7" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-9">
+    <rect x="0" y="221.1" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-10">
+    <rect x="0" y="245.5" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-11">
+    <rect x="0" y="269.9" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-12">
+    <rect x="0" y="294.3" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-13">
+    <rect x="0" y="318.7" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-14">
+    <rect x="0" y="343.1" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-15">
+    <rect x="0" y="367.5" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-16">
+    <rect x="0" y="391.9" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-17">
+    <rect x="0" y="416.3" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-18">
+    <rect x="0" y="440.7" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-19">
+    <rect x="0" y="465.1" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-20">
+    <rect x="0" y="489.5" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-21">
+    <rect x="0" y="513.9" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-22">
+    <rect x="0" y="538.3" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-23">
+    <rect x="0" y="562.7" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-24">
+    <rect x="0" y="587.1" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-25">
+    <rect x="0" y="611.5" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-26">
+    <rect x="0" y="635.9" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-27">
+    <rect x="0" y="660.3" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-28">
+    <rect x="0" y="684.7" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-29">
+    <rect x="0" y="709.1" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-30">
+    <rect x="0" y="733.5" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-31">
+    <rect x="0" y="757.9" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-32">
+    <rect x="0" y="782.3" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-33">
+    <rect x="0" y="806.7" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-34">
+    <rect x="0" y="831.1" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-35">
+    <rect x="0" y="855.5" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-36">
+    <rect x="0" y="879.9" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-37">
+    <rect x="0" y="904.3" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-38">
+    <rect x="0" y="928.7" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-39">
+    <rect x="0" y="953.1" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-40">
+    <rect x="0" y="977.5" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-41">
+    <rect x="0" y="1001.9" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-42">
+    <rect x="0" y="1026.3" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-43">
+    <rect x="0" y="1050.7" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-44">
+    <rect x="0" y="1075.1" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-45">
+    <rect x="0" y="1099.5" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-46">
+    <rect x="0" y="1123.9" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-47">
+    <rect x="0" y="1148.3" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-48">
+    <rect x="0" y="1172.7" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-49">
+    <rect x="0" y="1197.1" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-50">
+    <rect x="0" y="1221.5" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-51">
+    <rect x="0" y="1245.9" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-52">
+    <rect x="0" y="1270.3" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-53">
+    <rect x="0" y="1294.7" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-54">
+    <rect x="0" y="1319.1" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-55">
+    <rect x="0" y="1343.5" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-56">
+    <rect x="0" y="1367.9" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-57">
+    <rect x="0" y="1392.3" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-58">
+    <rect x="0" y="1416.7" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-59">
+    <rect x="0" y="1441.1" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-60">
+    <rect x="0" y="1465.5" width="1049.2" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-3059034938-line-61">
+    <rect x="0" y="1489.9" width="1049.2" height="24.65"/>
+            </clipPath>
+    </defs>
+
+    <rect fill="#161622" stroke="rgba(255,255,255,0.35)" stroke-width="1" x="1" y="1" width="1066" height="1585.2" rx="8"/><text class="terminal-3059034938-title" fill="#e1e4f0" text-anchor="middle" x="533" y="27">$&#160;trx&#160;lore</text>
+            <g transform="translate(26,22)">
+            <circle cx="0" cy="0" r="7" fill="#ff5f57"/>
+            <circle cx="22" cy="0" r="7" fill="#febc2e"/>
+            <circle cx="44" cy="0" r="7" fill="#28c840"/>
+            </g>
+        
+    <g transform="translate(9, 41)" clip-path="url(#terminal-3059034938-clip-terminal)">
+    
+    <g class="terminal-3059034938-matrix">
+    <text class="terminal-3059034938-r1" x="0" y="20" textLength="1049.2" clip-path="url(#terminal-3059034938-line-0)">╭────────────────────────────────────────────────────────────────────────────────────╮</text><text class="terminal-3059034938-r2" x="1049.2" y="20" textLength="12.2" clip-path="url(#terminal-3059034938-line-0)">
+</text><text class="terminal-3059034938-r1" x="0" y="44.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-1)">│</text><text class="terminal-3059034938-r3" x="24.4" y="44.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-1)">l</text><text class="terminal-3059034938-r4" x="36.6" y="44.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-1)">o</text><text class="terminal-3059034938-r5" x="48.8" y="44.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-1)">r</text><text class="terminal-3059034938-r6" x="61" y="44.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-1)">e</text><text class="terminal-3059034938-r7" x="805.2" y="44.4" textLength="219.6" clip-path="url(#terminal-3059034938-line-1)">✓&#160;dictionary&#160;+&#160;LLM</text><text class="terminal-3059034938-r8" x="1037" y="44.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-1)">│</text><text class="terminal-3059034938-r2" x="1049.2" y="44.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-1)">
+</text><text class="terminal-3059034938-r1" x="0" y="68.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-2)">│</text><text class="terminal-3059034938-r9" x="24.4" y="68.8" textLength="134.2" clip-path="url(#terminal-3059034938-line-2)">/lɔː/&#160;&#160;noun</text><text class="terminal-3059034938-r8" x="1037" y="68.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-2)">│</text><text class="terminal-3059034938-r2" x="1049.2" y="68.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-2)">
+</text><text class="terminal-3059034938-r1" x="0" y="93.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-3)">│</text><text class="terminal-3059034938-r10" x="24.4" y="93.2" textLength="195.2" clip-path="url(#terminal-3059034938-line-3)">English&#160;→&#160;Polish</text><text class="terminal-3059034938-r8" x="1037" y="93.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-3)">│</text><text class="terminal-3059034938-r2" x="1049.2" y="93.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-3)">
+</text><text class="terminal-3059034938-r8" x="0" y="117.6" textLength="1049.2" clip-path="url(#terminal-3059034938-line-4)">╰────────────────────────────────────────────────────────────────────────────────────╯</text><text class="terminal-3059034938-r2" x="1049.2" y="117.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-4)">
+</text><text class="terminal-3059034938-r2" x="1049.2" y="142" textLength="12.2" clip-path="url(#terminal-3059034938-line-5)">
+</text><text class="terminal-3059034938-r3" x="0" y="166.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-6)">◆</text><text class="terminal-3059034938-r12" x="24.4" y="166.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-6)">M</text><text class="terminal-3059034938-r4" x="36.6" y="166.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-6)">e</text><text class="terminal-3059034938-r13" x="48.8" y="166.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-6)">a</text><text class="terminal-3059034938-r14" x="61" y="166.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-6)">n</text><text class="terminal-3059034938-r5" x="73.2" y="166.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-6)">i</text><text class="terminal-3059034938-r15" x="85.4" y="166.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-6)">n</text><text class="terminal-3059034938-r16" x="97.6" y="166.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-6)">g</text><text class="terminal-3059034938-r10" x="122" y="166.4" textLength="915" clip-path="url(#terminal-3059034938-line-6)">───────────────────────────────────────────────────────────────────────────</text><text class="terminal-3059034938-r2" x="1049.2" y="166.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-6)">
+</text><text class="terminal-3059034938-r3" x="0" y="190.8" textLength="48.8" clip-path="url(#terminal-3059034938-line-7)">&#160;&#160;1&#160;</text><text class="terminal-3059034938-r17" x="48.8" y="190.8" textLength="256.2" clip-path="url(#terminal-3059034938-line-7)">traditional&#160;knowledge</text><text class="terminal-3059034938-r2" x="1049.2" y="190.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-7)">
+</text><text class="terminal-3059034938-r18" x="61" y="215.2" textLength="841.8" clip-path="url(#terminal-3059034938-line-8)">The&#160;body&#160;of&#160;facts,&#160;beliefs&#160;and&#160;traditions&#160;about&#160;a&#160;particular&#160;subject,</text><text class="terminal-3059034938-r2" x="1049.2" y="215.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-8)">
+</text><text class="terminal-3059034938-r18" x="61" y="239.6" textLength="915" clip-path="url(#terminal-3059034938-line-9)">accumulated&#160;over&#160;time&#160;and&#160;passed&#160;on&#160;through&#160;teaching,&#160;experience&#160;or&#160;word&#160;of</text><text class="terminal-3059034938-r2" x="1049.2" y="239.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-9)">
+</text><text class="terminal-3059034938-r18" x="61" y="264" textLength="73.2" clip-path="url(#terminal-3059034938-line-10)">mouth.</text><text class="terminal-3059034938-r2" x="1049.2" y="264" textLength="12.2" clip-path="url(#terminal-3059034938-line-10)">
+</text><text class="terminal-3059034938-r19" x="61" y="288.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-11)">▎</text><text class="terminal-3059034938-r20" x="85.4" y="288.4" textLength="658.8" clip-path="url(#terminal-3059034938-line-11)">“Old&#160;sailors&#160;were&#160;full&#160;of&#160;sea&#160;lore&#160;and&#160;superstitions.”</text><text class="terminal-3059034938-r2" x="1049.2" y="288.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-11)">
+</text><text class="terminal-3059034938-r6" x="61" y="312.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-12)">▎</text><text class="terminal-3059034938-r8" x="85.4" y="312.8" textLength="707.6" clip-path="url(#terminal-3059034938-line-12)">Starzy&#160;marynarze&#160;znali&#160;mnóstwo&#160;morskich&#160;podań&#160;i&#160;przesądów.</text><text class="terminal-3059034938-r2" x="1049.2" y="312.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-12)">
+</text><text class="terminal-3059034938-r3" x="0" y="337.2" textLength="48.8" clip-path="url(#terminal-3059034938-line-13)">&#160;&#160;2&#160;</text><text class="terminal-3059034938-r17" x="48.8" y="337.2" textLength="231.8" clip-path="url(#terminal-3059034938-line-13)">fictional&#160;backstory</text><text class="terminal-3059034938-r2" x="1049.2" y="337.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-13)">
+</text><text class="terminal-3059034938-r18" x="61" y="361.6" textLength="878.4" clip-path="url(#terminal-3059034938-line-14)">The&#160;background&#160;history,&#160;mythology&#160;and&#160;details&#160;created&#160;around&#160;a&#160;fictional</text><text class="terminal-3059034938-r2" x="1049.2" y="361.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-14)">
+</text><text class="terminal-3059034938-r18" x="61" y="386" textLength="683.2" clip-path="url(#terminal-3059034938-line-15)">universe,&#160;such&#160;as&#160;a&#160;game,&#160;book&#160;series&#160;or&#160;film&#160;franchise.</text><text class="terminal-3059034938-r2" x="1049.2" y="386" textLength="12.2" clip-path="url(#terminal-3059034938-line-15)">
+</text><text class="terminal-3059034938-r19" x="61" y="410.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-16)">▎</text><text class="terminal-3059034938-r20" x="85.4" y="410.4" textLength="805.2" clip-path="url(#terminal-3059034938-line-16)">“Fans&#160;spend&#160;hours&#160;discussing&#160;the&#160;lore&#160;of&#160;the&#160;Elder&#160;Scrolls&#160;games.”</text><text class="terminal-3059034938-r2" x="1049.2" y="410.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-16)">
+</text><text class="terminal-3059034938-r6" x="61" y="434.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-17)">▎</text><text class="terminal-3059034938-r8" x="85.4" y="434.8" textLength="902.8" clip-path="url(#terminal-3059034938-line-17)">Fani&#160;godzinami&#160;dyskutują&#160;o&#160;uniwersum&#160;i&#160;historii&#160;świata&#160;gier&#160;Elder&#160;Scrolls.</text><text class="terminal-3059034938-r2" x="1049.2" y="434.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-17)">
+</text><text class="terminal-3059034938-r3" x="0" y="459.2" textLength="48.8" clip-path="url(#terminal-3059034938-line-18)">&#160;&#160;3&#160;</text><text class="terminal-3059034938-r17" x="48.8" y="459.2" textLength="256.2" clip-path="url(#terminal-3059034938-line-18)">workmanship&#160;(archaic)</text><text class="terminal-3059034938-r2" x="1049.2" y="459.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-18)">
+</text><text class="terminal-3059034938-r18" x="61" y="483.6" textLength="841.8" clip-path="url(#terminal-3059034938-line-19)">An&#160;obsolete&#160;sense&#160;meaning&#160;skill&#160;or&#160;craftsmanship&#160;in&#160;making&#160;something.</text><text class="terminal-3059034938-r2" x="1049.2" y="483.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-19)">
+</text><text class="terminal-3059034938-r19" x="61" y="508" textLength="12.2" clip-path="url(#terminal-3059034938-line-20)">▎</text><text class="terminal-3059034938-r20" x="85.4" y="508" textLength="695.4" clip-path="url(#terminal-3059034938-line-20)">“The&#160;chest&#160;was&#160;praised&#160;for&#160;the&#160;fine&#160;lore&#160;of&#160;its&#160;carving.”</text><text class="terminal-3059034938-r2" x="1049.2" y="508" textLength="12.2" clip-path="url(#terminal-3059034938-line-20)">
+</text><text class="terminal-3059034938-r6" x="61" y="532.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-21)">▎</text><text class="terminal-3059034938-r8" x="85.4" y="532.4" textLength="475.8" clip-path="url(#terminal-3059034938-line-21)">Skrzynię&#160;chwalono&#160;za&#160;kunszt&#160;rzeźbienia.</text><text class="terminal-3059034938-r2" x="1049.2" y="532.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-21)">
+</text><text class="terminal-3059034938-r2" x="1049.2" y="556.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-22)">
+</text><text class="terminal-3059034938-r3" x="0" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">◆</text><text class="terminal-3059034938-r22" x="24.4" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">T</text><text class="terminal-3059034938-r23" x="36.6" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">r</text><text class="terminal-3059034938-r24" x="48.8" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">a</text><text class="terminal-3059034938-r11" x="61" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">n</text><text class="terminal-3059034938-r25" x="73.2" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">s</text><text class="terminal-3059034938-r26" x="85.4" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">l</text><text class="terminal-3059034938-r27" x="97.6" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">a</text><text class="terminal-3059034938-r28" x="109.8" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">t</text><text class="terminal-3059034938-r12" x="122" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">i</text><text class="terminal-3059034938-r29" x="134.2" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">o</text><text class="terminal-3059034938-r30" x="146.4" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">n</text><text class="terminal-3059034938-r31" x="158.6" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">s</text><text class="terminal-3059034938-r4" x="183" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">·</text><text class="terminal-3059034938-r34" x="207.4" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">P</text><text class="terminal-3059034938-r35" x="219.6" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">o</text><text class="terminal-3059034938-r36" x="231.8" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">l</text><text class="terminal-3059034938-r13" x="244" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">i</text><text class="terminal-3059034938-r37" x="256.2" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">s</text><text class="terminal-3059034938-r38" x="268.4" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">h</text><text class="terminal-3059034938-r40" x="292.8" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">·</text><text class="terminal-3059034938-r41" x="317.2" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">e</text><text class="terminal-3059034938-r42" x="329.4" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">s</text><text class="terminal-3059034938-r43" x="341.6" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">t</text><text class="terminal-3059034938-r44" x="353.8" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">.</text><text class="terminal-3059034938-r45" x="378.2" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">s</text><text class="terminal-3059034938-r46" x="390.4" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">h</text><text class="terminal-3059034938-r47" x="402.6" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">a</text><text class="terminal-3059034938-r48" x="414.8" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">r</text><text class="terminal-3059034938-r15" x="427" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">e</text><text class="terminal-3059034938-r50" x="451.4" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">o</text><text class="terminal-3059034938-r51" x="463.6" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">f</text><text class="terminal-3059034938-r16" x="488" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">u</text><text class="terminal-3059034938-r53" x="500.2" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">s</text><text class="terminal-3059034938-r54" x="512.4" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">a</text><text class="terminal-3059034938-r55" x="524.6" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">g</text><text class="terminal-3059034938-r56" x="536.8" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">e</text><text class="terminal-3059034938-r10" x="561.2" y="581.2" textLength="475.8" clip-path="url(#terminal-3059034938-line-23)">───────────────────────────────────────</text><text class="terminal-3059034938-r2" x="1049.2" y="581.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-23)">
+</text><text class="terminal-3059034938-r57" x="24.4" y="605.6" textLength="48.8" clip-path="url(#terminal-3059034938-line-24)">&#160;30%</text><text class="terminal-3059034938-r1" x="85.4" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">█</text><text class="terminal-3059034938-r58" x="97.6" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">█</text><text class="terminal-3059034938-r59" x="109.8" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">█</text><text class="terminal-3059034938-r60" x="122" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">█</text><text class="terminal-3059034938-r61" x="134.2" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">█</text><text class="terminal-3059034938-r62" x="146.4" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">▌</text><text class="terminal-3059034938-r10" x="158.6" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">·</text><text class="terminal-3059034938-r10" x="170.8" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">·</text><text class="terminal-3059034938-r10" x="183" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">·</text><text class="terminal-3059034938-r10" x="195.2" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">·</text><text class="terminal-3059034938-r10" x="207.4" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">·</text><text class="terminal-3059034938-r10" x="219.6" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">·</text><text class="terminal-3059034938-r10" x="231.8" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">·</text><text class="terminal-3059034938-r10" x="244" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">·</text><text class="terminal-3059034938-r10" x="256.2" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">·</text><text class="terminal-3059034938-r10" x="268.4" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">·</text><text class="terminal-3059034938-r10" x="280.6" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">·</text><text class="terminal-3059034938-r10" x="292.8" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">·</text><text class="terminal-3059034938-r17" x="329.4" y="605.6" textLength="73.2" clip-path="url(#terminal-3059034938-line-24)">wiedza</text><text class="terminal-3059034938-r2" x="1049.2" y="605.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-24)">
+</text><text class="terminal-3059034938-r9" x="366" y="630" textLength="597.8" clip-path="url(#terminal-3059034938-line-25)">Neutral;&#160;accumulated&#160;knowledge&#160;on&#160;a&#160;subject&#160;(e.g.</text><text class="terminal-3059034938-r2" x="1049.2" y="630" textLength="12.2" clip-path="url(#terminal-3059034938-line-25)">
+</text><text class="terminal-3059034938-r9" x="366" y="654.4" textLength="183" clip-path="url(#terminal-3059034938-line-26)">wiedza&#160;ludowa).</text><text class="terminal-3059034938-r2" x="1049.2" y="654.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-26)">
+</text><text class="terminal-3059034938-r57" x="24.4" y="678.8" textLength="48.8" clip-path="url(#terminal-3059034938-line-27)">&#160;20%</text><text class="terminal-3059034938-r1" x="85.4" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">█</text><text class="terminal-3059034938-r58" x="97.6" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">█</text><text class="terminal-3059034938-r59" x="109.8" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">█</text><text class="terminal-3059034938-r60" x="122" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">▌</text><text class="terminal-3059034938-r10" x="134.2" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">·</text><text class="terminal-3059034938-r10" x="146.4" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">·</text><text class="terminal-3059034938-r10" x="158.6" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">·</text><text class="terminal-3059034938-r10" x="170.8" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">·</text><text class="terminal-3059034938-r10" x="183" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">·</text><text class="terminal-3059034938-r10" x="195.2" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">·</text><text class="terminal-3059034938-r10" x="207.4" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">·</text><text class="terminal-3059034938-r10" x="219.6" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">·</text><text class="terminal-3059034938-r10" x="231.8" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">·</text><text class="terminal-3059034938-r10" x="244" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">·</text><text class="terminal-3059034938-r10" x="256.2" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">·</text><text class="terminal-3059034938-r10" x="268.4" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">·</text><text class="terminal-3059034938-r10" x="280.6" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">·</text><text class="terminal-3059034938-r10" x="292.8" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">·</text><text class="terminal-3059034938-r17" x="329.4" y="678.8" textLength="48.8" clip-path="url(#terminal-3059034938-line-27)">lore</text><text class="terminal-3059034938-r2" x="1049.2" y="678.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-27)">
+</text><text class="terminal-3059034938-r9" x="366" y="703.2" textLength="573.4" clip-path="url(#terminal-3059034938-line-28)">Loanword&#160;used&#160;by&#160;Polish&#160;gamers&#160;and&#160;fandom&#160;for&#160;a</text><text class="terminal-3059034938-r2" x="1049.2" y="703.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-28)">
+</text><text class="terminal-3059034938-r9" x="366" y="727.6" textLength="378.2" clip-path="url(#terminal-3059034938-line-29)">fictional&#160;universe&#x27;s&#160;backstory.</text><text class="terminal-3059034938-r2" x="1049.2" y="727.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-29)">
+</text><text class="terminal-3059034938-r57" x="24.4" y="752" textLength="48.8" clip-path="url(#terminal-3059034938-line-30)">&#160;15%</text><text class="terminal-3059034938-r1" x="85.4" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">█</text><text class="terminal-3059034938-r58" x="97.6" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">█</text><text class="terminal-3059034938-r59" x="109.8" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">▌</text><text class="terminal-3059034938-r10" x="122" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">·</text><text class="terminal-3059034938-r10" x="134.2" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">·</text><text class="terminal-3059034938-r10" x="146.4" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">·</text><text class="terminal-3059034938-r10" x="158.6" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">·</text><text class="terminal-3059034938-r10" x="170.8" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">·</text><text class="terminal-3059034938-r10" x="183" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">·</text><text class="terminal-3059034938-r10" x="195.2" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">·</text><text class="terminal-3059034938-r10" x="207.4" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">·</text><text class="terminal-3059034938-r10" x="219.6" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">·</text><text class="terminal-3059034938-r10" x="231.8" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">·</text><text class="terminal-3059034938-r10" x="244" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">·</text><text class="terminal-3059034938-r10" x="256.2" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">·</text><text class="terminal-3059034938-r10" x="268.4" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">·</text><text class="terminal-3059034938-r10" x="280.6" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">·</text><text class="terminal-3059034938-r10" x="292.8" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">·</text><text class="terminal-3059034938-r17" x="329.4" y="752" textLength="219.6" clip-path="url(#terminal-3059034938-line-30)">podania&#160;/&#160;przekazy</text><text class="terminal-3059034938-r2" x="1049.2" y="752" textLength="12.2" clip-path="url(#terminal-3059034938-line-30)">
+</text><text class="terminal-3059034938-r9" x="366" y="776.4" textLength="622.2" clip-path="url(#terminal-3059034938-line-31)">Traditional&#160;stories&#160;and&#160;beliefs&#160;passed&#160;down&#160;orally.</text><text class="terminal-3059034938-r2" x="1049.2" y="776.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-31)">
+</text><text class="terminal-3059034938-r57" x="24.4" y="800.8" textLength="48.8" clip-path="url(#terminal-3059034938-line-32)">&#160;12%</text><text class="terminal-3059034938-r1" x="85.4" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">█</text><text class="terminal-3059034938-r58" x="97.6" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">█</text><text class="terminal-3059034938-r59" x="109.8" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">▌</text><text class="terminal-3059034938-r10" x="122" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">·</text><text class="terminal-3059034938-r10" x="134.2" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">·</text><text class="terminal-3059034938-r10" x="146.4" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">·</text><text class="terminal-3059034938-r10" x="158.6" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">·</text><text class="terminal-3059034938-r10" x="170.8" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">·</text><text class="terminal-3059034938-r10" x="183" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">·</text><text class="terminal-3059034938-r10" x="195.2" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">·</text><text class="terminal-3059034938-r10" x="207.4" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">·</text><text class="terminal-3059034938-r10" x="219.6" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">·</text><text class="terminal-3059034938-r10" x="231.8" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">·</text><text class="terminal-3059034938-r10" x="244" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">·</text><text class="terminal-3059034938-r10" x="256.2" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">·</text><text class="terminal-3059034938-r10" x="268.4" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">·</text><text class="terminal-3059034938-r10" x="280.6" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">·</text><text class="terminal-3059034938-r10" x="292.8" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">·</text><text class="terminal-3059034938-r17" x="329.4" y="800.8" textLength="97.6" clip-path="url(#terminal-3059034938-line-32)">tradycja</text><text class="terminal-3059034938-r2" x="1049.2" y="800.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-32)">
+</text><text class="terminal-3059034938-r9" x="366" y="825.2" textLength="658.8" clip-path="url(#terminal-3059034938-line-33)">When&#160;the&#160;emphasis&#160;is&#160;on&#160;inherited&#160;customs&#160;and&#160;beliefs.</text><text class="terminal-3059034938-r2" x="1049.2" y="825.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-33)">
+</text><text class="terminal-3059034938-r57" x="24.4" y="849.6" textLength="48.8" clip-path="url(#terminal-3059034938-line-34)">&#160;10%</text><text class="terminal-3059034938-r1" x="85.4" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">█</text><text class="terminal-3059034938-r58" x="97.6" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">▌</text><text class="terminal-3059034938-r10" x="109.8" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">·</text><text class="terminal-3059034938-r10" x="122" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">·</text><text class="terminal-3059034938-r10" x="134.2" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">·</text><text class="terminal-3059034938-r10" x="146.4" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">·</text><text class="terminal-3059034938-r10" x="158.6" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">·</text><text class="terminal-3059034938-r10" x="170.8" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">·</text><text class="terminal-3059034938-r10" x="183" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">·</text><text class="terminal-3059034938-r10" x="195.2" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">·</text><text class="terminal-3059034938-r10" x="207.4" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">·</text><text class="terminal-3059034938-r10" x="219.6" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">·</text><text class="terminal-3059034938-r10" x="231.8" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">·</text><text class="terminal-3059034938-r10" x="244" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">·</text><text class="terminal-3059034938-r10" x="256.2" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">·</text><text class="terminal-3059034938-r10" x="268.4" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">·</text><text class="terminal-3059034938-r10" x="280.6" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">·</text><text class="terminal-3059034938-r10" x="292.8" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">·</text><text class="terminal-3059034938-r17" x="329.4" y="849.6" textLength="378.2" clip-path="url(#terminal-3059034938-line-34)">historia&#160;świata&#160;/&#160;tło&#160;fabularne</text><text class="terminal-3059034938-r2" x="1049.2" y="849.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-34)">
+</text><text class="terminal-3059034938-r9" x="366" y="874" textLength="610" clip-path="url(#terminal-3059034938-line-35)">Formal&#160;equivalent&#160;of&#160;the&#160;fictional-universe&#160;sense.</text><text class="terminal-3059034938-r2" x="1049.2" y="874" textLength="12.2" clip-path="url(#terminal-3059034938-line-35)">
+</text><text class="terminal-3059034938-r57" x="24.4" y="898.4" textLength="48.8" clip-path="url(#terminal-3059034938-line-36)">&#160;10%</text><text class="terminal-3059034938-r1" x="85.4" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">█</text><text class="terminal-3059034938-r58" x="97.6" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">▌</text><text class="terminal-3059034938-r10" x="109.8" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">·</text><text class="terminal-3059034938-r10" x="122" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">·</text><text class="terminal-3059034938-r10" x="134.2" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">·</text><text class="terminal-3059034938-r10" x="146.4" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">·</text><text class="terminal-3059034938-r10" x="158.6" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">·</text><text class="terminal-3059034938-r10" x="170.8" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">·</text><text class="terminal-3059034938-r10" x="183" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">·</text><text class="terminal-3059034938-r10" x="195.2" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">·</text><text class="terminal-3059034938-r10" x="207.4" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">·</text><text class="terminal-3059034938-r10" x="219.6" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">·</text><text class="terminal-3059034938-r10" x="231.8" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">·</text><text class="terminal-3059034938-r10" x="244" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">·</text><text class="terminal-3059034938-r10" x="256.2" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">·</text><text class="terminal-3059034938-r10" x="268.4" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">·</text><text class="terminal-3059034938-r10" x="280.6" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">·</text><text class="terminal-3059034938-r10" x="292.8" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">·</text><text class="terminal-3059034938-r17" x="329.4" y="898.4" textLength="256.2" clip-path="url(#terminal-3059034938-line-36)">mitologia&#160;(uniwersum)</text><text class="terminal-3059034938-r2" x="1049.2" y="898.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-36)">
+</text><text class="terminal-3059034938-r9" x="366" y="922.8" textLength="536.8" clip-path="url(#terminal-3059034938-line-37)">Used&#160;for&#160;the&#160;built-up&#160;mythos&#160;of&#160;a&#160;franchise.</text><text class="terminal-3059034938-r2" x="1049.2" y="922.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-37)">
+</text><text class="terminal-3059034938-r57" x="24.4" y="947.2" textLength="48.8" clip-path="url(#terminal-3059034938-line-38)">&#160;&#160;3%</text><text class="terminal-3059034938-r1" x="85.4" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">▌</text><text class="terminal-3059034938-r10" x="97.6" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">·</text><text class="terminal-3059034938-r10" x="109.8" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">·</text><text class="terminal-3059034938-r10" x="122" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">·</text><text class="terminal-3059034938-r10" x="134.2" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">·</text><text class="terminal-3059034938-r10" x="146.4" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">·</text><text class="terminal-3059034938-r10" x="158.6" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">·</text><text class="terminal-3059034938-r10" x="170.8" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">·</text><text class="terminal-3059034938-r10" x="183" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">·</text><text class="terminal-3059034938-r10" x="195.2" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">·</text><text class="terminal-3059034938-r10" x="207.4" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">·</text><text class="terminal-3059034938-r10" x="219.6" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">·</text><text class="terminal-3059034938-r10" x="231.8" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">·</text><text class="terminal-3059034938-r10" x="244" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">·</text><text class="terminal-3059034938-r10" x="256.2" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">·</text><text class="terminal-3059034938-r10" x="268.4" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">·</text><text class="terminal-3059034938-r10" x="280.6" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">·</text><text class="terminal-3059034938-r10" x="292.8" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">·</text><text class="terminal-3059034938-r17" x="329.4" y="947.2" textLength="73.2" clip-path="url(#terminal-3059034938-line-38)">kunszt</text><text class="terminal-3059034938-r2" x="1049.2" y="947.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-38)">
+</text><text class="terminal-3059034938-r9" x="366" y="971.6" textLength="536.8" clip-path="url(#terminal-3059034938-line-39)">Archaic&#160;sense&#160;of&#160;workmanship.&#160;Rarely&#160;needed.</text><text class="terminal-3059034938-r2" x="1049.2" y="971.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-39)">
+</text><text class="terminal-3059034938-r2" x="1049.2" y="996" textLength="12.2" clip-path="url(#terminal-3059034938-line-40)">
+</text><text class="terminal-3059034938-r3" x="0" y="1020.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-41)">◆</text><text class="terminal-3059034938-r64" x="24.4" y="1020.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-41)">S</text><text class="terminal-3059034938-r65" x="36.6" y="1020.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-41)">l</text><text class="terminal-3059034938-r66" x="48.8" y="1020.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-41)">a</text><text class="terminal-3059034938-r67" x="61" y="1020.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-41)">n</text><text class="terminal-3059034938-r68" x="73.2" y="1020.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-41)">g</text><text class="terminal-3059034938-r10" x="97.6" y="1020.4" textLength="939.4" clip-path="url(#terminal-3059034938-line-41)">─────────────────────────────────────────────────────────────────────────────</text><text class="terminal-3059034938-r2" x="1049.2" y="1020.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-41)">
+</text><text class="terminal-3059034938-r69" x="24.4" y="1044.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-42)">✦</text><text class="terminal-3059034938-r17" x="48.8" y="1044.8" textLength="48.8" clip-path="url(#terminal-3059034938-line-42)">lore</text><text class="terminal-3059034938-r70" x="109.8" y="1044.8" textLength="244" clip-path="url(#terminal-3059034938-line-42)">[informal,&#160;internet]</text><text class="terminal-3059034938-r2" x="1049.2" y="1044.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-42)">
+</text><text class="terminal-3059034938-r18" x="48.8" y="1069.2" textLength="951.6" clip-path="url(#terminal-3059034938-line-43)">Internet&#160;slang:&#160;someone&#x27;s&#160;personal&#160;backstory&#160;or&#160;past&#160;events&#160;that&#160;explain&#160;their</text><text class="terminal-3059034938-r2" x="1049.2" y="1069.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-43)">
+</text><text class="terminal-3059034938-r18" x="48.8" y="1093.6" textLength="109.8" clip-path="url(#terminal-3059034938-line-44)">behavior.</text><text class="terminal-3059034938-r2" x="1049.2" y="1093.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-44)">
+</text><text class="terminal-3059034938-r8" x="48.8" y="1118" textLength="646.6" clip-path="url(#terminal-3059034938-line-45)">→&#160;przeszłość&#160;/&#160;historia&#160;(kogoś),&#160;potocznie&#160;też&#160;„lore”</text><text class="terminal-3059034938-r2" x="1049.2" y="1118" textLength="12.2" clip-path="url(#terminal-3059034938-line-45)">
+</text><text class="terminal-3059034938-r69" x="24.4" y="1142.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-46)">✦</text><text class="terminal-3059034938-r17" x="48.8" y="1142.4" textLength="109.8" clip-path="url(#terminal-3059034938-line-46)">lore&#160;drop</text><text class="terminal-3059034938-r70" x="170.8" y="1142.4" textLength="244" clip-path="url(#terminal-3059034938-line-46)">[informal,&#160;internet]</text><text class="terminal-3059034938-r2" x="1049.2" y="1142.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-46)">
+</text><text class="terminal-3059034938-r18" x="48.8" y="1166.8" textLength="780.8" clip-path="url(#terminal-3059034938-line-47)">Revealing&#160;a&#160;surprising&#160;piece&#160;of&#160;personal&#160;or&#160;fictional&#160;backstory.</text><text class="terminal-3059034938-r2" x="1049.2" y="1166.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-47)">
+</text><text class="terminal-3059034938-r8" x="48.8" y="1191.2" textLength="573.4" clip-path="url(#terminal-3059034938-line-48)">→&#160;odsłonięcie&#160;historii&#160;/&#160;wyznanie&#160;z&#160;przeszłości</text><text class="terminal-3059034938-r2" x="1049.2" y="1191.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-48)">
+</text><text class="terminal-3059034938-r69" x="24.4" y="1215.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-49)">✦</text><text class="terminal-3059034938-r17" x="48.8" y="1215.6" textLength="109.8" clip-path="url(#terminal-3059034938-line-49)">deep&#160;lore</text><text class="terminal-3059034938-r70" x="170.8" y="1215.6" textLength="219.6" clip-path="url(#terminal-3059034938-line-49)">[informal,&#160;fandom]</text><text class="terminal-3059034938-r2" x="1049.2" y="1215.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-49)">
+</text><text class="terminal-3059034938-r18" x="48.8" y="1240" textLength="829.6" clip-path="url(#terminal-3059034938-line-50)">Obscure,&#160;detailed&#160;background&#160;knowledge&#160;known&#160;only&#160;to&#160;dedicated&#160;fans.</text><text class="terminal-3059034938-r2" x="1049.2" y="1240" textLength="12.2" clip-path="url(#terminal-3059034938-line-50)">
+</text><text class="terminal-3059034938-r8" x="48.8" y="1264.4" textLength="536.8" clip-path="url(#terminal-3059034938-line-51)">→&#160;głęboki&#160;lore&#160;/&#160;smaczki&#160;dla&#160;wtajemniczonych</text><text class="terminal-3059034938-r2" x="1049.2" y="1264.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-51)">
+</text><text class="terminal-3059034938-r2" x="1049.2" y="1288.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-52)">
+</text><text class="terminal-3059034938-r3" x="0" y="1313.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-53)">◆</text><text class="terminal-3059034938-r72" x="24.4" y="1313.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-53)">I</text><text class="terminal-3059034938-r73" x="36.6" y="1313.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-53)">n</text><text class="terminal-3059034938-r74" x="61" y="1313.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-53)">c</text><text class="terminal-3059034938-r75" x="73.2" y="1313.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-53)">o</text><text class="terminal-3059034938-r76" x="85.4" y="1313.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-53)">n</text><text class="terminal-3059034938-r5" x="97.6" y="1313.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-53)">t</text><text class="terminal-3059034938-r77" x="109.8" y="1313.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-53)">e</text><text class="terminal-3059034938-r78" x="122" y="1313.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-53)">x</text><text class="terminal-3059034938-r79" x="134.2" y="1313.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-53)">t</text><text class="terminal-3059034938-r10" x="158.6" y="1313.2" textLength="878.4" clip-path="url(#terminal-3059034938-line-53)">────────────────────────────────────────────────────────────────────────</text><text class="terminal-3059034938-r2" x="1049.2" y="1313.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-53)">
+</text><text class="terminal-3059034938-r19" x="24.4" y="1337.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-54)">›</text><text class="terminal-3059034938-r2" x="48.8" y="1337.6" textLength="122" clip-path="url(#terminal-3059034938-line-54)">local&#160;lore</text><text class="terminal-3059034938-r2" x="1049.2" y="1337.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-54)">
+</text><text class="terminal-3059034938-r6" x="48.8" y="1362" textLength="451.4" clip-path="url(#terminal-3059034938-line-55)">→&#160;miejscowe&#160;podania&#160;/&#160;lokalne&#160;legendy</text><text class="terminal-3059034938-r2" x="1049.2" y="1362" textLength="12.2" clip-path="url(#terminal-3059034938-line-55)">
+</text><text class="terminal-3059034938-r9" x="48.8" y="1386.4" textLength="414.8" clip-path="url(#terminal-3059034938-line-56)">Stories&#160;and&#160;beliefs&#160;about&#160;a&#160;place.</text><text class="terminal-3059034938-r2" x="1049.2" y="1386.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-56)">
+</text><text class="terminal-3059034938-r19" x="24.4" y="1410.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-57)">›</text><text class="terminal-3059034938-r2" x="48.8" y="1410.8" textLength="109.8" clip-path="url(#terminal-3059034938-line-57)">game&#160;lore</text><text class="terminal-3059034938-r2" x="1049.2" y="1410.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-57)">
+</text><text class="terminal-3059034938-r6" x="48.8" y="1435.2" textLength="390.4" clip-path="url(#terminal-3059034938-line-58)">→&#160;lore&#160;gry&#160;/&#160;historia&#160;świata&#160;gry</text><text class="terminal-3059034938-r2" x="1049.2" y="1435.2" textLength="12.2" clip-path="url(#terminal-3059034938-line-58)">
+</text><text class="terminal-3059034938-r9" x="48.8" y="1459.6" textLength="451.4" clip-path="url(#terminal-3059034938-line-59)">Gamers&#160;usually&#160;keep&#160;the&#160;English&#160;word.</text><text class="terminal-3059034938-r2" x="1049.2" y="1459.6" textLength="12.2" clip-path="url(#terminal-3059034938-line-59)">
+</text><text class="terminal-3059034938-r19" x="24.4" y="1484" textLength="12.2" clip-path="url(#terminal-3059034938-line-60)">›</text><text class="terminal-3059034938-r2" x="48.8" y="1484" textLength="207.4" clip-path="url(#terminal-3059034938-line-60)">according&#160;to&#160;lore</text><text class="terminal-3059034938-r2" x="1049.2" y="1484" textLength="12.2" clip-path="url(#terminal-3059034938-line-60)">
+</text><text class="terminal-3059034938-r6" x="48.8" y="1508.4" textLength="463.6" clip-path="url(#terminal-3059034938-line-61)">→&#160;według&#160;przekazów&#160;/&#160;zgodnie&#160;z&#160;legendą</text><text class="terminal-3059034938-r2" x="1049.2" y="1508.4" textLength="12.2" clip-path="url(#terminal-3059034938-line-61)">
+</text><text class="terminal-3059034938-r9" x="48.8" y="1532.8" textLength="610" clip-path="url(#terminal-3059034938-line-62)">Introduces&#160;traditional&#160;or&#160;in-universe&#160;information.</text><text class="terminal-3059034938-r2" x="1049.2" y="1532.8" textLength="12.2" clip-path="url(#terminal-3059034938-line-62)">
+</text>
+    </g>
+    </g>
+</svg>

@@ -173,7 +173,7 @@ THEMES = {
     "solarized-dark":   dict(a1="#6c71c4", a2="#2aa198", blue="#268bd2", ok="#859900", hl="#b58900", mute="#586e75", text="#93a1a1"),
     "one-dark":         dict(a1="#c678dd", a2="#56b6c2", blue="#61afef", ok="#98c379", hl="#e5c07b", mute="#5c6370", text="#abb2bf"),
     "rose-pine":        dict(a1="#c4a7e7", a2="#9ccfd8", blue="#31748f", ok="#9ccfd8", hl="#f6c177", mute="#6e6a86", text="#e0def4"),
-    "monokai":          dict(a1="#ae81ff", a2="#66d9ef", blue="#66d9ef", ok="#a6e22e", hl="#e6db74", mute="#75715e", text="#f8f8f2"),
+    "monokai":          dict(a1="#f92672", a2="#e6db74", blue="#66d9ef", ok="#a6e22e", hl="#e6db74", mute="#75715e", text="#f8f8f2"),
 }
 
 
